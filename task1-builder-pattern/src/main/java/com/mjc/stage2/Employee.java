@@ -68,7 +68,39 @@ public class Employee {
         return new EmployeeBuilder();
     }
 
+    @ToString
     public static class EmployeeBuilder {
         // Write your code here!
+        private String name;
+        private String lastName;
+        private String position;
+        private String phone;
+        private String email;
+        private String carNumber;
+
+        public EmployeeBuilder name(String name){
+            this.name=name;
+            return this;
+        }
+        public EmployeeBuilder lastName(String lastName){
+            this.lastName=lastName;
+            return this;
+        }
+        public EmployeeBuilder position(String position){
+            this.phone=position;
+            return this;
+        }
+        public EmployeeBuilder phone(String phone){
+            this.phone=phone;
+            return this;
+        }
+        public EmployeeBuilder email(String email){
+            this.email=email;
+            return this;
+        }
+        public EmployeeBuilder carNumber(String carNumber){
+            this.carNumber=carNumber;
+            return this;
+        }
     }
 }
