@@ -70,46 +70,33 @@ public class Employee {
 
     public static class EmployeeBuilder {
         // Write your code here!
-        private String name;
-        private String lastName;
-        private String position;
-        private String phone;
-        private String email;
-        private String carNumber;
-
+        private final Employee employee = new Employee();
         public EmployeeBuilder name(String name){
-            this.name=name;
+            this.employee.setName(name);
             return this;
         }
         public EmployeeBuilder lastName(String lastName){
-            this.lastName=lastName;
+            this.employee.setLastName(lastName);
             return this;
         }
         public EmployeeBuilder position(String position){
-            this.phone=position;
+            this.employee.setPosition(position);
             return this;
         }
         public EmployeeBuilder phone(String phone){
-            this.phone=phone;
+            this.employee.setPhone(phone);
             return this;
         }
         public EmployeeBuilder email(String email){
-            this.email=email;
+            this.employee.setEmail(email);
             return this;
         }
         public EmployeeBuilder carNumber(String carNumber){
-            this.carNumber=carNumber;
+            this.employee.setCarNumber(carNumber);
             return this;
         }
         public Employee build() {
-            Employee employee = new Employee();
-            employee.setName(name);
-            employee.setEmail(email);
-            employee.setPhone(phone);
-            employee.setPosition(position);
-            employee.setCarNumber(carNumber);
-            employee.setLastName(lastName);
-            return employee;
+            return this.employee;
         }
     }
 }
