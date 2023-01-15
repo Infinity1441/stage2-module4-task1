@@ -20,8 +20,13 @@ public class H2ConnectionFactory implements ConnectionFactory {
             prop.load(file);
             String driver = prop.getProperty("jdbc_driver");
             Class.forName(driver);
+            file.close();
             return DriverManager.getConnection(prop.getProperty("db_url"), prop.getProperty("user"), prop.getProperty("password"));
-        } catch (IOException | SQLException | ClassNotFoundException e) {
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
