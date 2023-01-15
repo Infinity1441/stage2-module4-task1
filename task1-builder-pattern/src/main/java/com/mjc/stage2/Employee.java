@@ -70,33 +70,45 @@ public class Employee {
 
     public static class EmployeeBuilder {
         // Write your code here!
-        private final Employee employee = new Employee();
-        public EmployeeBuilder name(String name){
-            this.employee.setName(name);
+        private String name;
+        private String lastName;
+        private String position;
+        private String phone;
+        private String email;
+        private String carNumber;
+        public EmployeeBuilder setName(String name){
+            this.name=name;
             return this;
         }
-        public EmployeeBuilder lastName(String lastName){
-            this.employee.setLastName(lastName);
+        public EmployeeBuilder setLastName(String lastName){
+            this.lastName=lastName;
             return this;
         }
-        public EmployeeBuilder position(String position){
-            this.employee.setPosition(position);
+        public EmployeeBuilder setPosition(String position){
+            this.position=position;
             return this;
         }
-        public EmployeeBuilder phone(String phone){
-            this.employee.setPhone(phone);
+        public EmployeeBuilder setPhone(String phone){
+            this.phone=phone;
             return this;
         }
-        public EmployeeBuilder email(String email){
-            this.employee.setEmail(email);
+        public EmployeeBuilder setEmail(String email){
+            this.email=email;
             return this;
         }
-        public EmployeeBuilder carNumber(String carNumber){
-            this.employee.setCarNumber(carNumber);
+        public EmployeeBuilder setCarNumber(String carNumber){
+            this.carNumber=carNumber;
             return this;
         }
         public Employee build() {
-            return this.employee;
+            Employee employee = new Employee();
+            employee.setPhone(phone);
+            employee.setEmail(email);
+            employee.setPosition(position);
+            employee.setLastName(lastName);
+            employee.setCarNumber(carNumber);
+            employee.setName(name);
+            return employee;
         }
     }
 }
