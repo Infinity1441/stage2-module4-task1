@@ -102,5 +102,15 @@ public class Employee {
             this.carNumber=carNumber;
             return this;
         }
+        public Employee build() {
+            Employee employee = new Employee();
+            employee.setName(name);
+            employee.setEmail(email);
+            employee.setPhone(phone);
+            employee.setPosition(position);
+            employee.setCarNumber(carNumber);
+            employee.setLastName(lastName);
+            return employee;
+        }
     }
 }
