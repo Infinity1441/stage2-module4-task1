@@ -68,7 +68,6 @@ public class Employee {
         return new EmployeeBuilder();
     }
 
-    @ToString
     public static class EmployeeBuilder {
         // Write your code here!
         private String name;
